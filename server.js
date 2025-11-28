@@ -57,7 +57,11 @@ app.post("/ingest", async (req, res) => {
   // Insert into Supabase
   const { data, error } = await supabase
     .from("forest_telemetry")
-    .insert([fullPayload]);
+    .insert([{ 
+    ...fullPayload,
+    received_at: new Date().toISOString()
+}]);
+
 
   if (error) return res.status(500).json({ error });
 
