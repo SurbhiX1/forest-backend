@@ -51,7 +51,7 @@ app.post("/ingest", async (req, res) => {
     flame2: compactPayload.f2,
     db: compactPayload.db,
     battery_pct: compactPayload.b,
-    timestamp: compactPayload.ts,
+    ts: compactPayload.ts,
   };
 
   // Insert into Supabase
